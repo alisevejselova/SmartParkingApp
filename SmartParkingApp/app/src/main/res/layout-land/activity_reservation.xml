@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="horizontal"
+  tools:context=".ReservationActivity">
+  <androidx.appcompat.widget.Toolbar
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="56dp"
+      android:background="@color/purple_200"
+      android:id="@+id/toolbar"
+      app:title="Datum i vreme">
+  </androidx.appcompat.widget.Toolbar>
+  <fragment
+      android:id="@+id/fragment1"
+      android:name="com.example.smartparkingapp.ReservationFragment"
+      android:layout_width="350dp"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_below="@id/toolbar"
+      android:layout_marginLeft="23dp"
+      tools:layout="@layout/fragment_reservation"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="27dp" />
+
+  <fragment
+      android:id="@+id/fragment2"
+      android:name="com.example.smartparkingapp.ReservationFragment2"
+      android:layout_width="200dp"
+      android:layout_height="200dp"
+      android:layout_alignParentRight="true"
+      android:layout_marginRight="68dp"
+      android:layout_below="@id/toolbar"
+      tools:ignore="MissingConstraints"
+      tools:layout="@layout/fragment_reservation2"
+      tools:layout_editor_absoluteX="434dp"
+      tools:layout_editor_absoluteY="76dp" />
+
+</RelativeLayout>

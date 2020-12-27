@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ReservationActivity">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:background="@color/purple_200"-->
+<!--        android:id="@+id/toolbar"-->
+<!--        app:title="Gradovi">-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+        <TextView
+            android:id="@+id/cityinfo"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="city info" />
+
+        <TextView
+            android:id="@+id/datetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="140dp"
+            android:text="Select date : "
+            android:textAppearance="?android:textAppearanceLarge"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="yy/xx/zzzz"
+            android:layout_marginTop="140dp"
+            android:layout_toEndOf="@id/datetext"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/spinnertext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="180dp"
+            android:text="Choose time :"
+            android:textAppearance="?android:textAppearanceLarge"
+            />
+        <Spinner
+            android:id="@+id/spinner_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_toEndOf="@+id/spinnertext"
+            android:spinnerMode="dialog"
+            android:prompt="@string/timeslot"
+            android:entries="@array/time_slot"/>
+    <Button
+        android:id="@+id/rezerviraj1"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_dialog"
+        android:layout_marginTop="30dp"
+        android:text="Rezerviraj" />
+
+</RelativeLayout>

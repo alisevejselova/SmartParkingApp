@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ConfirmationReservationActivity">
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/purple_200"
+        android:id="@+id/toolbar"
+        app:title="Navigacija">
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/confirmationinfo"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:text="Parking Name"
+        android:textSize="25dp"
+        />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="306dp"
+        android:layout_height="231dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginRight="43dp"
+        app:srcCompat="@drawable/navigation" />
+
+
+    <Button
+        android:id="@+id/navigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/confirmationinfo"
+        android:layout_marginRight="542dp"
+        android:background="@android:color/white"
+        android:text="location"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
