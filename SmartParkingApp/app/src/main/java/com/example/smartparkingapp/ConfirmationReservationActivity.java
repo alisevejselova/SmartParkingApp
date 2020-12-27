@@ -38,7 +38,7 @@ public class ConfirmationReservationActivity extends AppCompatActivity {
         lng = intent.getFloatExtra("Long",0);
 
         confirmationINFO = findViewById(R.id.confirmationinfo);
-        confirmationINFO.setText("Uspesno rezerviravte parking mesto vo "+parking+"na"+datum+"vo periodot"+cas);
+        confirmationINFO.setText("Uspesno rezerviravte parking mesto vo "+grad+" na parking "+parking+" na "+datum+" vo periodot "+cas);
 
         navigate = findViewById(R.id.navigate);
 
@@ -59,19 +59,19 @@ public class ConfirmationReservationActivity extends AppCompatActivity {
             }
         });
 
-        moirezervacii = findViewById(R.id.moirezervacii);
-        moirezervacii.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent moirezervaci=new Intent(v.getContext(),MyReservationsActivity.class);
-                moirezervaci.putExtra("Korisnik",korisnik);
-                moirezervaci.putExtra("Parking",parking);
-                moirezervaci.putExtra("Grad",grad);
-                moirezervaci.putExtra("Datum",datum);
-                moirezervaci.putExtra("Vreme",cas);
-                startActivity(moirezervaci);
-            }
-        });
+//        moirezervacii = findViewById(R.id.moirezervacii);
+//        moirezervacii.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent moirezervaci=new Intent(v.getContext(),MyReservationsActivity.class);
+//                moirezervaci.putExtra("Korisnik",korisnik);
+//                moirezervaci.putExtra("Parking",parking);
+//                moirezervaci.putExtra("Grad",grad);
+//                moirezervaci.putExtra("Datum",datum);
+//                moirezervaci.putExtra("Vreme",cas);
+//                startActivity(moirezervaci);
+//            }
+//        });
 
     }
     @Override
@@ -87,7 +87,9 @@ public class ConfirmationReservationActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.button:
-                Toast.makeText(ConfirmationReservationActivity.this,"Moi rezervacii cliked",Toast.LENGTH_SHORT).show();
+                Intent moirezervaci=new Intent(this,MyReservationsActivity.class);
+                moirezervaci.putExtra("Korisnik",korisnik);
+                startActivity(moirezervaci);
                 return true;
 
             default:

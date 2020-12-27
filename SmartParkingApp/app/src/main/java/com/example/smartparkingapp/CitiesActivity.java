@@ -64,7 +64,9 @@ public class CitiesActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.button:
-                Toast.makeText(CitiesActivity.this,"Moi rezervacii cliked",Toast.LENGTH_SHORT).show();
+                Intent moirezervaci=new Intent(this,MyReservationsActivity.class);
+                moirezervaci.putExtra("Korisnik",username);
+               startActivity(moirezervaci);
                 return true;
 
             default:

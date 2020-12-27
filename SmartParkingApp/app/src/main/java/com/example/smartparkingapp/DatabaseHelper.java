@@ -68,6 +68,47 @@ public List<String> getParkings (String city) {
     c1.close();
     return parkingNames;
 }
+
+//    public List<String> getUserReservations(String korisnik) {
+//        List<String> userreservations = new ArrayList();
+//        SQLiteDatabase database = this.getReadableDatabase();
+//        Cursor c1 = database.rawQuery("SELECT * FROM Reservations WHERE username LIKE '" + korisnik + "'", null);
+//        while(c1.moveToNext()) {
+//            userreservations.add(c1.getString(0));
+//        }
+//        c1.close();
+//        return userreservations;
+//    }
+public List<MyReservationsModel> getUserReservations(String username) {
+
+    SQLiteDatabase db = this.getReadableDatabase();
+    try {
+        onCreate(db);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    List<MyReservationsModel> returnList = new ArrayList<>();
+
+    String query = "SELECT * FROM Reservations WHERE username =?";
+
+    Cursor cursor = db.rawQuery(query,  new String[]{username});
+
+    while(cursor.moveToNext()) {
+        String parkingName = cursor.getString(1);
+        String date=cursor.getString(2);
+        String time =cursor.getString(3);
+
+        MyReservationsModel rezervacii =
+                new MyReservationsModel(username,parkingName, date,time);
+        returnList.add(rezervacii);
+    }
+    cursor.close();
+    db.close();
+
+    return returnList;
+}
+
+
     public int getTotalSpaces(String name) {
         int total = 0;
         SQLiteDatabase database = this.getReadableDatabase();
@@ -151,6 +192,7 @@ public List<String> getParkings (String city) {
 
         return count > 0;
     }
+
 
 
 }

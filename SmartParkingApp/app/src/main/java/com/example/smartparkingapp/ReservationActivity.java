@@ -22,7 +22,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class ReservationActivity extends AppCompatActivity  {
-
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,11 @@ public class ReservationActivity extends AppCompatActivity  {
 
         Toolbar mytoolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mytoolbar);
+
+
+        Intent intent = getIntent();
+        username = intent.getStringExtra("Username");
+
 
         }
     @Override
@@ -45,7 +50,9 @@ public class ReservationActivity extends AppCompatActivity  {
         switch (item.getItemId())
         {
             case R.id.button:
-                Toast.makeText(ReservationActivity.this,"Moi rezervacii cliked",Toast.LENGTH_SHORT).show();
+                Intent moirezervaci=new Intent(this,MyReservationsActivity.class);
+                moirezervaci.putExtra("Korisnik",username);
+                startActivity(moirezervaci);
                 return true;
 
             default:

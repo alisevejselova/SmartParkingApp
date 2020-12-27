@@ -47,7 +47,7 @@ public class ParkingActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mAdapter = new ParkingAdapter(valuesNames, R.layout.parking_list, datum, cas, korisnik, database,this);
+        mAdapter = new ParkingAdapter(valuesNames, R.layout.parking_list, grad,datum, cas, korisnik, database,this);
         mRecyclerView.setAdapter(mAdapter);
     }
     @Override
@@ -63,7 +63,9 @@ public class ParkingActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.button:
-                Toast.makeText(ParkingActivity.this,"Moi rezervacii cliked",Toast.LENGTH_SHORT).show();
+                Intent moirezervaci=new Intent(this,MyReservationsActivity.class);
+                moirezervaci.putExtra("Korisnik",korisnik);
+                startActivity(moirezervaci);
                 return true;
 
             default:

@@ -21,7 +21,7 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.ParkingV
     private final String datum;
     private final String korisnik;
     private final DatabaseHelper database;
-    String grad;
+    private final String grad;
 
     public class ParkingViewHolder extends RecyclerView.ViewHolder {
         public TextView parkingName;
@@ -37,13 +37,14 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.ParkingV
             zafateni = itemView.findViewById(R.id.zafateni_mesta);
         }
     }
-    public ParkingAdapter(List<String> myList, int rowLayout, String datum, String cas, String korisnik,  DatabaseHelper database, Context context) {
+    public ParkingAdapter(List<String> myList, int rowLayout, String grad,String datum, String cas, String korisnik,  DatabaseHelper database, Context context) {
         this.myList = myList;
         this.rowLayout = rowLayout;
         this.mContext = context;
         this.datum = datum;
         this.cas = cas;
         this.korisnik = korisnik;
+        this.grad=grad;
         this.database = database;
     }
 
@@ -62,6 +63,7 @@ public class ParkingAdapter extends RecyclerView.Adapter<ParkingAdapter.ParkingV
         int takenSpaces = totalSpaces - freeSpaces;
         final float lat = database.getLat(entry);
         final float lng = database.getLong(entry);
+
 
         String takenS = String.valueOf(takenSpaces);
         String freeS = String.valueOf(freeSpaces);
