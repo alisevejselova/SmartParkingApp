@@ -43,7 +43,7 @@ public class ReservationFragment extends Fragment implements DatePickerDialog.On
         TextView text = getActivity().findViewById(R.id.cityinfo);
          city = intent.getStringExtra("City");
          username= intent.getStringExtra("Username");
-        text.setText(username +" "+city);
+        text.setText("Izbran grad :"+city);
 
 
 
@@ -86,13 +86,16 @@ public class ReservationFragment extends Fragment implements DatePickerDialog.On
 //                if(db.existingReservation(username, datum, vreme)) {
 //                    Toast.makeText(getActivity(),"Postoi aktivna rezervacija vo izbranoto vreme !",Toast.LENGTH_SHORT).show();
 //                } else {
-                    Intent intent = new Intent(v.getContext(), ParkingActivity.class);
+//                if(db.numberReservations(username)) {
+//                    Toast.makeText(getActivity(), "Vekje imate 3 aktivni rezervacii!", Toast.LENGTH_LONG).show();
+//                }else {
+                Intent intent = new Intent(v.getContext(), ParkingActivity.class);
                     intent.putExtra("Korisnik", username);
                     intent.putExtra("Grad", city);
                     intent.putExtra("Datum", datum);
                     intent.putExtra("Cas", vreme);
                     startActivity(intent);
-              //  }
+           //    }
            }
         });
 

@@ -72,7 +72,7 @@
             android:layout_marginLeft="15dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignParentLeft="true"
-            android:text="Vreme"
+            android:text="Vreme: "
             />
         <TextView
             android:id="@+id/cas"

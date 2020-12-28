@@ -20,17 +20,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:layout_marginLeft="110dp"
-        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:textAppearanceMedium"
         android:textStyle="bold"
-        android:text="USER : "/>
+        android:text="Korisnik : "/>
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_toEndOf="@+id/usertext"
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textAppearance="?android:textAppearanceMedium"
         android:textStyle="bold"
         android:text="username"/>
     <androidx.recyclerview.widget.RecyclerView

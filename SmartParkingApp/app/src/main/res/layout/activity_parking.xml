@@ -21,7 +21,9 @@ tools:context=".ParkingActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textStyle="bold"
         android:text="TextView"
         />
 

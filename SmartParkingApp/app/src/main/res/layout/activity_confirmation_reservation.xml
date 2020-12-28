@@ -22,8 +22,11 @@ tools:context=".ConfirmationReservationActivity">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
       android:layout_below="@id/toolbar"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
         android:text="Parking Name"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:textColor="@color/green"
         />
 
     <ImageView
@@ -47,6 +50,7 @@ tools:context=".ConfirmationReservationActivity">
     android:background="@android:color/white"
     android:text="location"
     android:textSize="20dp"
+    android:textColor="@color/green"
 />
 
 

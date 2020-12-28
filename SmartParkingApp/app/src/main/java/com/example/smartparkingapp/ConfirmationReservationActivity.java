@@ -38,7 +38,7 @@ public class ConfirmationReservationActivity extends AppCompatActivity {
         lng = intent.getFloatExtra("Long",0);
 
         confirmationINFO = findViewById(R.id.confirmationinfo);
-        confirmationINFO.setText("Uspesno rezerviravte parking mesto vo "+grad+" na parking "+parking+" na "+datum+" vo periodot "+cas);
+        confirmationINFO.setText("Uspesno e rezervirano parking mesto vo "+grad+" na parking "+parking+" na "+datum+" vo periodot "+cas);
 
         navigate = findViewById(R.id.navigate);
 

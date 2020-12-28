@@ -38,7 +38,7 @@ public class ParkingActivity extends AppCompatActivity {
          cas = intent.getStringExtra("Cas");
 
         TextView info = findViewById(R.id.info);
-        info.setText(korisnik+" "+grad+" "+ datum +" "+cas);
+        info.setText("Izbran datum "+ datum +", vreme "+cas);
 
         database = new DatabaseHelper(this);
         List<String> valuesNames = database.getParkings(grad);
